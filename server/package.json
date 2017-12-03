@@ -1,0 +1,25 @@
+{
+    "name": "bears-08",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ndrwknx/bears-08.git"
+    },
+    "author": "bears-08",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ndrwknx/bears-08/issues"
+    },
+    "homepage": "https://github.com/ndrwknx/bears-08#readme",
+    "dependencies": {
+        "bcrypt": "^1.0.3",
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "mongoose": "^4.13.6"
+    }
+}
