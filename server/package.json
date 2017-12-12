@@ -1,27 +1,12 @@
 {
-    "name": "bears-08",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "nodemon index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ndrwknx/bears-08.git"
-    },
-    "author": "bears-08",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ndrwknx/bears-08/issues"
-    },
-    "homepage": "https://github.com/ndrwknx/bears-08#readme",
-    "dependencies": {
-        "bcrypt": "^1.0.3",
-        "body-parser": "^1.18.2",
-        "express": "^4.16.2"
-    },
-    "devDependencies": {
-        "nodemon": "^1.12.1"
-    }
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "express": "^4.16.2",
+    "nodeman": "^1.1.2"
+  }
 }
