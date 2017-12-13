@@ -1,12 +1,30 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "babel-node": "babel-node --preset=/*a*/",
+    "start": "parallel mon watcher",
+    "mon": "nodemon --exec npm run babel-node -- src/index.js",
+    "lint": "./node_modules/.bin/eslint index.js",
+    "watch": "esw -w src",
+    "watcher": "parallel lint watch"
+  },
   "dependencies": {
-    "bcrypt": "^1.0.3",
-    "express": "^4.16.2",
-    "nodeman": "^1.1.2"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-watch": "^3.1.3",
+    "nodemon": "^1.12.5",
+    "npm-parallel": "^2.0.1"
   }
 }
