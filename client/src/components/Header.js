@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import Appbar from 'material-ui/AppBar';
 
 class Header extends Component {
     render() {
-        return (
-          <header className="header">
-            <h1>
-                {this.props.name}
-            </h1>
-          </header>  
+        return (         
+        <Appbar
+            title={this.props.name}
+        />  
         );
     }
 }

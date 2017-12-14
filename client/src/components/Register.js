@@ -1,35 +1,70 @@
 import React, { Component } from 'react';
-import Button from './Button';
-import '../styles/register.css'
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import AuthenticationService from '../services/AuthenticationService';
+
 
 class Register extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstname: '',
+            lastname: '',
+            username: '',
+            email: '',
+            password: '',
+            confirmpassword: ''
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleSubmit(event) {
+        AuthenticationService.register(this.state);
+    }
+
+    handleChange(event) {
+        const target = event.target;
+        const name = target.name;
+        this.setState({
+            [name]: target.value
+        })
+    }
+
     render() {
         return (
-            <div class="registerComponent">
-                <form className="registerForm">
-                    <label>
-                        First Name:
-                        <input type="text" name="firstname" />
-                    </label>
-                    <label>
-                        Last Name:
-                        <input type="text" name="lastname" />
-                    </label>
-                    <label>
-                        Username:
-                        <input type="text" name="username" />
-                    </label>
-                    <label>
-                        E-mail:
-                        <input type="email" name="email" />
-                    </label>
-                    <label>
-                        Password:
-                        <input type="password" name="password" />
-                    </label>
-                </form>
-                <Button name="Register" />
-            </div>
+            <form className="registerForm">
+                <TextField
+                    floatingLabelText="first name"
+                    name="firstname"
+                    value={this.state.firstname}
+                    onChange={this.handleChange}
+                />
+                <TextField
+                    floatingLabelText="last name"
+                    name="lastname"
+                />
+                <TextField
+                    floatingLabelText="username"
+                    name="username"
+                />
+                <TextField
+                    floatingLabelText="email"
+                    name="email"
+                />
+                <TextField
+                    floatingLabelText="password"
+                    name="password"
+                />
+                <TextField
+                    floatingLabelText="confirm password"
+                    name="confirmpassword"
+                />
+                <RaisedButton 
+                    onClick={this.handleSubmit}
+                    label="Register"
+                />
+            </form>
         );
     }
 }
